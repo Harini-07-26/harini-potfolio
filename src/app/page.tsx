@@ -3,6 +3,11 @@
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 import Header from './components/header';
+'use client';
+
+import Image from 'next/image';
+import { TypeAnimation } from 'react-type-animation';
+import Header from './components/header';
 
 export default function Home() {
   return (
@@ -45,6 +50,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
