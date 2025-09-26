@@ -11,7 +11,7 @@ export default function Header() {
           <Link href="/about" title="About" className="hover:text-gray-300">
             About
           </Link>
-          <Link href="/projects" title="Work Experience" className="hover:text-gray-300">
+          <Link href="/work" title="Work Experience" className="hover:text-gray-300">
             Work Experience
           </Link>
           <Link href="/education" className="hover:text-gray-300">

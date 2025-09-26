@@ -15,7 +15,9 @@ export default function Home() {
           <div className="flex flex-row gap-9 items-center">
             {/* Left Text Section */}
             <div className="grid grid-cols-1 gap-3">
-              <div className="text-xl text-black font-bold">User name</div>
+              <div className="text-xl text-black font-bold">
+                Hi I am username, <i className="fa-solid fa-hand-wave"></i>
+              </div>
 
               {/* Typing animation container */}
               <div className="text-xl font-mono text-green-500 bg-black p-4 rounded-lg shadow-md">

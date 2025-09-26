@@ -1,5 +1,5 @@
 export const PERSONAL_DETAILS = {
-  name: 'Harini Thangavel',
+  name: 'Harini',
   role: 'Full Stack Developer',
   Age: 28,
   location: 'Chennai, India',

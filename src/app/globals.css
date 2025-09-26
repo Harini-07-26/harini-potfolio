@@ -19,3 +19,37 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes slideIn {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 300px;
+  }
+}
+
+.animate-slide-linear {
+  position: relative;
+  animation: slideIn 1s linear forwards;
+}
+
+.animate-slide-ease {
+  position: relative;
+  animation: slideIn 1s ease forwards;
+}
+
+.animate-slide-ease-in {
+  position: relative;
+  animation: slideIn 1s ease-in forwards;
+}
+
+.animate-slide-ease-out {
+  position: relative;
+  animation: slideIn 1s ease-out forwards;
+}
+
+.animate-slide-ease-in-out {
+  position: relative;
+  animation: slideIn 1s ease-in-out forwards;
+}
