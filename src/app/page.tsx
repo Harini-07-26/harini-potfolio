@@ -25,7 +25,8 @@ import {
   Send,
   Globe,
   Clock,
-  X
+  X,
+  Briefcase
 } from 'lucide-react';
 import SectionWrapper from '@/src/components/SectionWrapper';
 import { PERSONAL_DETAILS, PROJECTS, SKILLS, EXPERIENCES } from '@/src/utils/constants';
@@ -47,10 +48,6 @@ function EmailModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
   const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
     PERSONAL_DETAILS.email
   )}&su=${encodeURIComponent('Hello Harini - Full Stack Developer Inquiry')}`;
-
-  const mailtoUrl = `mailto:${PERSONAL_DETAILS.email}?subject=${encodeURIComponent(
-    'Hello Harini - Full Stack Developer Inquiry'
-  )}`;
 
   return (
     <div
@@ -132,7 +129,10 @@ function EmailModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 function HeroSection({ onOpenEmail }: { onOpenEmail: () => void }) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50 dark:bg-[#0a0a0f] transition-colors duration-300">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50 dark:bg-[#0a0a0f] transition-colors duration-300"
+    >
       {/* Background gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/15 dark:bg-indigo-500/20 rounded-full blur-[120px] animate-pulse" />
@@ -284,8 +284,12 @@ function HeroSection({ onOpenEmail }: { onOpenEmail: () => void }) {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 function AboutSection() {
   return (
-    <section id="about" className="py-24 bg-slate-100/60 dark:bg-[#080810] transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="py-24 bg-slate-100/60 dark:bg-[#080810] transition-colors duration-300 relative overflow-hidden">
+      {/* Background ambient decorative glow */}
+      <div className="absolute top-1/2 left-10 w-96 h-96 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <SectionWrapper>
           <div className="text-center mb-16">
             <span className="text-indigo-600 dark:text-indigo-400 text-sm font-mono tracking-widest uppercase">
@@ -294,69 +298,148 @@ function AboutSection() {
             <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mt-3">
               Crafting Digital <span className="gradient-text">Experiences</span>
             </h2>
+            <p className="text-slate-600 dark:text-white/50 mt-4 max-w-xl mx-auto text-sm sm:text-base">
+              A blend of creative UI engineering, 3D interactive web, and robust backend architectures.
+            </p>
           </div>
         </SectionWrapper>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <SectionWrapper>
-            <div className="glass rounded-2xl p-8 space-y-6">
-              <p className="text-slate-700 dark:text-white/70 text-lg leading-relaxed">
-                I&apos;m a passionate{' '}
-                <span className="text-indigo-600 dark:text-indigo-400 font-semibold">Full Stack Developer</span> based
-                in Chennai, India, with a love for building products that solve real problems and create great user
-                experiences.
-              </p>
-              <p className="text-slate-600 dark:text-white/70 leading-relaxed">
-                My expertise spans the full web stack — from{' '}
-                <span className="text-slate-900 dark:text-white font-medium">crafting responsive, animated UIs</span>{' '}
-                with React and Next.js, to building{' '}
-                <span className="text-slate-900 dark:text-white font-medium">scalable APIs and microservices</span> with
-                Node.js and NestJS. I&apos;ve worked on 3D product configurators, enterprise platforms, and AI-powered
-                internal tools.
-              </p>
-              <p className="text-slate-600 dark:text-white/70 leading-relaxed">
-                I bring a team a{' '}
-                <span className="text-slate-900 dark:text-white font-medium">solutions-first mindset</span>, clean code
-                standards, and a habit of diving deep into both the UI and the architecture to deliver features that
-                actually work — end-to-end.
-              </p>
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
+          {/* Left Side: Professional Profile Box */}
+          <SectionWrapper className="lg:col-span-6 flex">
+            <div className="glass rounded-3xl p-7 sm:p-9 flex flex-col justify-between border border-slate-200/80 dark:border-white/10 hover:border-indigo-500/30 transition-all duration-300 shadow-xl relative overflow-hidden group w-full">
+              {/* Subtle card glow */}
+              <div className="absolute -top-24 -left-24 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-indigo-500/20 transition-all" />
 
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-slate-200 dark:border-white/10">
-                {[
-                  { value: '3+', label: 'Years Experience' },
-                  { value: '10+', label: 'Projects Shipped' },
-                  { value: '2', label: 'Companies' }
-                ].map((stat) => (
-                  <div key={stat.label} className="text-center">
-                    <div className="text-2xl font-bold gradient-text">{stat.value}</div>
-                    <div className="text-slate-500 dark:text-white/50 text-xs mt-1">{stat.label}</div>
+              <div className="space-y-5 relative z-10">
+                {/* Header Tag */}
+                <div className="flex items-center justify-between gap-3 pb-2 border-b border-slate-200/60 dark:border-white/5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-mono font-medium">
+                    <Sparkles size={13} className="text-indigo-500" />
+                    <span>Full-Stack Engineer</span>
                   </div>
-                ))}
+                  <span className="text-xs font-mono text-slate-500 dark:text-white/40">Chennai, India</span>
+                </div>
+
+                {/* Lead Intro */}
+                <p className="text-slate-800 dark:text-slate-100 text-base sm:text-lg font-medium leading-relaxed">
+                  I&apos;m a passionate{' '}
+                  <span className="text-indigo-600 dark:text-indigo-400 font-semibold">Full Stack Developer</span> with
+                  3+ years of experience building scalable, user-centric web applications and interactive 3D solutions.
+                </p>
+
+                {/* Technical Scope */}
+                <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                  My core expertise spans the full modern JavaScript ecosystem — from crafting{' '}
+                  <span className="text-slate-900 dark:text-white font-medium">
+                    pixel-perfect, animated user interfaces &amp; real-time 3D configurators
+                  </span>{' '}
+                  with React, Next.js, and Three.js, to architecting{' '}
+                  <span className="text-slate-900 dark:text-white font-medium">high-throughput backend APIs</span> using
+                  Node.js, NestJS, Prisma, and RabbitMQ.
+                </p>
+
+                {/* Mindset & Value Add */}
+                <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                  I bring teams a{' '}
+                  <span className="text-slate-900 dark:text-white font-medium">solutions-first mindset</span>, clean
+                  architectural patterns, and end-to-end ownership — from initial schema design and queue optimization to
+                  intuitive, accessible frontend flows.
+                </p>
+
+                {/* 4 Feature Badges */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+                  <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-100/80 dark:bg-white/5 border border-slate-200/60 dark:border-white/5 text-xs text-slate-700 dark:text-slate-300">
+                    <Code2 size={15} className="text-indigo-500 flex-shrink-0" />
+                    <span className="font-medium">React.js &amp; Next.js</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-100/80 dark:bg-white/5 border border-slate-200/60 dark:border-white/5 text-xs text-slate-700 dark:text-slate-300">
+                    <Cpu size={15} className="text-purple-500 flex-shrink-0" />
+                    <span className="font-medium">Node.js &amp; NestJS</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-100/80 dark:bg-white/5 border border-slate-200/60 dark:border-white/5 text-xs text-slate-700 dark:text-slate-300">
+                    <Box size={15} className="text-pink-500 flex-shrink-0" />
+                    <span className="font-medium">Three.js 3D Web</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-100/80 dark:bg-white/5 border border-slate-200/60 dark:border-white/5 text-xs text-slate-700 dark:text-slate-300">
+                    <Database size={15} className="text-emerald-500 flex-shrink-0" />
+                    <span className="font-medium">MySQL, Prisma &amp; RabbitMQ</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Enhanced Stats Cards */}
+              <div className="grid grid-cols-3 gap-3 pt-6 mt-6 border-t border-slate-200/80 dark:border-white/10 relative z-10">
+                <div className="glass rounded-xl p-3 text-center border border-slate-200/60 dark:border-white/5 hover:border-indigo-500/30 transition-all">
+                  <div className="text-2xl sm:text-3xl font-extrabold gradient-text">3+</div>
+                  <div className="text-[11px] sm:text-xs text-slate-500 dark:text-white/60 font-medium mt-1">
+                    Years Experience
+                  </div>
+                </div>
+                <div className="glass rounded-xl p-3 text-center border border-slate-200/60 dark:border-white/5 hover:border-purple-500/30 transition-all">
+                  <div className="text-2xl sm:text-3xl font-extrabold gradient-text">10+</div>
+                  <div className="text-[11px] sm:text-xs text-slate-500 dark:text-white/60 font-medium mt-1">
+                    Projects Shipped
+                  </div>
+                </div>
+                <div className="glass rounded-xl p-3 text-center border border-slate-200/60 dark:border-white/5 hover:border-pink-500/30 transition-all">
+                  <div className="text-2xl sm:text-3xl font-extrabold gradient-text">100%</div>
+                  <div className="text-[11px] sm:text-xs text-slate-500 dark:text-white/60 font-medium mt-1">
+                    Sprint Delivery
+                  </div>
+                </div>
               </div>
             </div>
           </SectionWrapper>
 
-          <SectionWrapper>
-            {/* Experience timeline */}
-            <div className="space-y-6">
+          {/* Right Side: Experience Timeline */}
+          <SectionWrapper className="lg:col-span-6 flex">
+            <div className="w-full flex flex-col justify-between space-y-6">
               {EXPERIENCES.map((exp, i) => (
-                <div key={i} className="glass rounded-xl p-6 hover:border-indigo-500/30 transition-colors">
-                  <div className="flex items-start justify-between mb-3">
-                    <div>
-                      <h3 className="text-slate-900 dark:text-white font-bold text-lg">{exp.company}</h3>
-                      <p className="text-indigo-600 dark:text-indigo-400 text-sm font-medium">{exp.role}</p>
+                <div
+                  key={i}
+                  className="glass rounded-3xl p-7 flex-1 border border-slate-200/80 dark:border-white/10 hover:border-indigo-500/30 transition-all duration-300 shadow-xl flex flex-col justify-between group hover:-translate-y-0.5"
+                >
+                  <div>
+                    <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <Briefcase size={16} className="text-indigo-500 dark:text-indigo-400" />
+                          <h3 className="text-slate-900 dark:text-white font-bold text-lg sm:text-xl">
+                            {exp.company}
+                          </h3>
+                        </div>
+                        <p className="text-indigo-600 dark:text-indigo-400 text-sm font-medium mt-0.5">
+                          {exp.role}
+                        </p>
+                      </div>
+                      <span className="text-slate-600 dark:text-white/60 text-xs font-mono bg-slate-200/60 dark:bg-white/5 px-3 py-1 rounded-full border border-slate-200 dark:border-white/10">
+                        {exp.period}
+                      </span>
                     </div>
-                    <span className="text-slate-600 dark:text-white/40 text-xs bg-slate-200/60 dark:bg-white/5 px-3 py-1 rounded-full border border-slate-200 dark:border-white/10">
-                      {exp.period}
-                    </span>
+
+                    <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                      {exp.description}
+                    </p>
+
+                    {/* Key points preview */}
+                    {exp.points && exp.points.length > 0 && (
+                      <ul className="space-y-1.5 mb-5 text-xs text-slate-600 dark:text-slate-300">
+                        {exp.points.slice(0, 2).map((pt, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 flex-shrink-0" />
+                            <span>{pt}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
-                  <p className="text-slate-600 dark:text-white/60 text-sm mb-4">{exp.description}</p>
-                  <div className="flex flex-wrap gap-2">
+
+                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-200/60 dark:border-white/5">
                     {exp.tech.map((t) => (
                       <span
                         key={t}
-                        className="text-xs px-2 py-1 bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 text-indigo-700 dark:text-indigo-400 rounded-md"
+                        className="text-[11px] px-2.5 py-1 bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200/80 dark:border-indigo-500/20 text-indigo-700 dark:text-indigo-300 rounded-md font-medium"
                       >
                         {t}
                       </span>
@@ -540,10 +623,6 @@ function ContactSection({ onOpenEmail }: { onOpenEmail: () => void }) {
   const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
     PERSONAL_DETAILS.email
   )}&su=${encodeURIComponent('Discussion: Full Stack Developer Role / Inquiry')}`;
-
-  const mailtoUrl = `mailto:${PERSONAL_DETAILS.email}?subject=${encodeURIComponent(
-    'Discussion: Full Stack Developer Role / Inquiry'
-  )}`;
 
   return (
     <section

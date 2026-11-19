@@ -12,11 +12,11 @@ export const PERSONAL_DETAILS = {
 };
 
 export const NAV_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/#about' },
-  { label: 'Projects', href: '/#projects' },
-  { label: 'Skills', href: '/#skills' },
-  { label: 'Contact', href: '/#contact' }
+  { label: 'Home', id: 'home', href: '/#home' },
+  { label: 'About', id: 'about', href: '/#about' },
+  { label: 'Projects', id: 'projects', href: '/#projects' },
+  { label: 'Skills', id: 'skills', href: '/#skills' },
+  { label: 'Contact', id: 'contact', href: '/#contact' }
 ];
 
 export const SKILLS = {

@@ -142,8 +142,8 @@ html.light .glass-hover:hover {
 /* ═══════════════════════════════════════
    WORK PAGE STYLES (preserved)
 ═══════════════════════════════════════ */
-h1 { font-size: 5.25vmin; text-align: center; }
-p { font-size: max(10pt, 2.5vmin); line-height: 1.4; }
+.wrap h1 { font-size: 5.25vmin; text-align: center; }
+.wrap p { font-size: max(10pt, 2.5vmin); line-height: 1.4; }
 
 .wrap {
   display: flex; flex-wrap: nowrap; justify-content: space-between;
