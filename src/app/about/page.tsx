@@ -43,25 +43,35 @@ const AboutMePage = () => {
         {/* Contact Details */}
         <div className="mt-4 space-y-1 text-gray-700 dark:text-gray-300">
           <p>📍 Chennai, India</p>
-          <p>📧 harini.dev@gmail.com</p>
+          <p>📧 {PERSONAL_DETAILS.email}</p>
         </div>
 
         {/* Social Links */}
         <div className="mt-5 flex justify-center space-x-6">
-          <a href="mailto:harini.dev@gmail.com" className="text-gray-600 hover:text-blue-600 dark:text-gray-300">
+          <a
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(PERSONAL_DETAILS.email)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-blue-600 dark:text-gray-300"
+            title="Send Email via Gmail"
+          >
             <Mail size={22} />
           </a>
           <a
-            href="https://github.com/yourusername"
+            href={PERSONAL_DETAILS.github}
             target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-600 hover:text-blue-600 dark:text-gray-300"
+            title="GitHub"
           >
             <Github size={22} />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href={PERSONAL_DETAILS.linkedin}
             target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-600 hover:text-blue-600 dark:text-gray-300"
+            title="LinkedIn"
           >
             <Linkedin size={22} />
           </a>
@@ -70,7 +80,7 @@ const AboutMePage = () => {
         {/* Resume Button */}
         <div className="mt-6">
           <a
-            href="/resume.pdf" // place resume in public folder
+            href="/Harini_Thangavel.pdf" // place resume in public folder
             download
             className="inline-block bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700"
           >
