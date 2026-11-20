@@ -14,6 +14,7 @@ export const PERSONAL_DETAILS = {
 export const NAV_LINKS = [
   { label: 'Home', id: 'home', href: '/#home' },
   { label: 'About', id: 'about', href: '/#about' },
+  { label: 'Experience', id: 'experience', href: '/#experience' },
   { label: 'Projects', id: 'projects', href: '/#projects' },
   { label: 'Skills', id: 'skills', href: '/#skills' },
   { label: 'Contact', id: 'contact', href: '/#contact' }
@@ -21,40 +22,43 @@ export const NAV_LINKS = [
 
 export const SKILLS = {
   Frontend: [
-    { name: 'React.js', level: 90 },
-    { name: 'Next.js', level: 85 },
-    { name: 'TypeScript', level: 82 },
-    { name: 'JavaScript', level: 90 },
-    { name: 'Tailwind CSS', level: 88 }
+    { name: 'React.js', level: 92 },
+    { name: 'Next.js', level: 90 },
+    { name: 'TypeScript', level: 88 },
+    { name: 'JavaScript', level: 92 },
+    { name: 'Tailwind CSS', level: 90 },
+    { name: 'React Native', level: 80 }
   ],
   Backend: [
-    { name: 'Node.js', level: 85 },
-    { name: 'NestJS', level: 80 },
-    { name: 'Express.js', level: 85 },
-    { name: 'REST APIs', level: 90 }
+    { name: 'Node.js', level: 88 },
+    { name: 'NestJS', level: 85 },
+    { name: 'Express.js', level: 88 },
+    { name: 'RESTful APIs', level: 92 },
+    { name: 'Microservices', level: 80 }
   ],
   Database: [
-    { name: 'MySQL', level: 82 },
-    { name: 'Prisma ORM', level: 78 },
-    { name: 'PostgreSQL', level: 75 },
-    { name: 'MongoDB', level: 70 }
+    { name: 'MySQL / SQL', level: 88 },
+    { name: 'Prisma ORM', level: 85 },
+    { name: 'MongoDB / Mongoose', level: 80 },
+    { name: 'Sequelize', level: 78 }
   ],
   Architecture: [
-    { name: 'RabbitMQ', level: 72 },
-    { name: 'Event-Driven Architecture', level: 70 },
-    { name: 'API Integration', level: 85 }
+    { name: 'RabbitMQ', level: 82 },
+    { name: 'Event-Driven Architecture', level: 80 },
+    { name: 'API Integration', level: 88 },
+    { name: 'RBAC Authorization', level: 85 }
   ],
   '3D & AI': [
-    { name: 'Three.js', level: 75 },
-    { name: 'React Three Fiber', level: 72 },
-    { name: 'AI-Assisted Development', level: 78 },
-    { name: 'GPT Integrations', level: 74 }
+    { name: 'Three.js 3D Web', level: 85 },
+    { name: 'React Three Fiber & Drei', level: 82 },
+    { name: 'Generative AI Integration', level: 82 },
+    { name: 'Internal GPT Development', level: 84 }
   ],
-  Tools: [
-    { name: 'Git & GitHub', level: 88 },
-    { name: 'Postman', level: 85 },
-    { name: 'Bitbucket', level: 80 },
-    { name: 'CI/CD', level: 72 }
+  'Cloud & Tools': [
+    { name: 'AWS S3 & DigitalOcean Spaces', level: 82 },
+    { name: 'CI/CD & Deployments', level: 80 },
+    { name: 'Git & GitHub', level: 90 },
+    { name: 'Google Maps / Places API', level: 96 }
   ]
 };
 
@@ -63,49 +67,76 @@ export const PROJECTS = [
     id: 1,
     title: '3D Elevator Configurator',
     subtitle: 'Interactive 3D Product Experience',
+    category: '3D Web & Interactive',
     description:
       'An immersive web application allowing users to configure elevator options in real-time and visualize every change on a photorealistic 3D model — from cabin finishes and door styles to dimensions and lighting.',
     longDescription:
-      'Built for Nibav Lifts, this tool enables sales and customers to configure elevator models interactively. Users select cabin size, finish material, door type, and interior lighting. Every selection instantly updates the 3D model rendered with Three.js and React Three Fiber, providing a true-to-life preview before purchase.',
-    technologies: ['React.js', 'Three.js', 'React Three Fiber', 'Drei'],
-    color: 'from-indigo-500 to-purple-600',
+      'Engineered for Nibav Lifts and Elite Elevators, this interactive 3D configurator lets customers and sales representatives explore elevator models in real-time. Users customize finishes, glass panels, lighting, and accessories with instant photorealistic model rendering powered by Three.js and React Three Fiber, accelerating the sales conversion cycle.',
+    technologies: ['React.js', 'Three.js', 'React Three Fiber', 'Drei', 'Tailwind CSS'],
+    color: 'from-emerald-500 to-teal-600',
     icon: '🏗️',
     highlights: [
-      'Real-time 3D visualization',
-      'Multiple configuration options',
-      'Photorealistic rendering',
-      'Mobile responsive'
+      'Real-time 3D model rendering',
+      'Dynamic material & cabin customization',
+      'High-performance frame rate',
+      'Cross-platform responsive design'
     ]
   },
   {
     id: 2,
-    title: 'Enterprise Management Platform',
+    title: 'Enterprise Management Platform & EMI Financing',
     subtitle: 'Full-Scale Business Operations Suite',
+    category: 'Enterprise & Full-Stack',
     description:
-      'A robust enterprise platform handling complex business workflows, optimized database operations, asynchronous job processing, and rich data exports — serving thousands of daily transactions.',
+      'A robust enterprise platform handling complex business workflows, financing & EMI applications, optimized database operations, and asynchronous processing serving thousands of daily transactions.',
     longDescription:
-      'Built with Next.js and NestJS microservices, this platform powers end-to-end business management: lead tracking, inventory, invoicing, and reporting. Features include optimized MySQL queries via Prisma ORM, RabbitMQ queues for async processing, PDF/Excel exports, and a fully typed REST API layer.',
-    technologies: ['Next.js', 'NestJS', 'Prisma ORM', 'MySQL', 'RabbitMQ'],
+      'Architected end-to-end full stack architecture for customer portals and enterprise business operations. Features dynamic multi-step EMI financing workflows with document verification, RabbitMQ event-driven queues for heavy background tasks, Prisma ORM query tuning on MySQL, and granular role-based access control (RBAC).',
+    technologies: ['Next.js', 'NestJS', 'TypeScript', 'Prisma ORM', 'MySQL', 'RabbitMQ'],
     color: 'from-emerald-500 to-teal-600',
     icon: '🏢',
-    highlights: ['Async job queues', 'Database optimization', 'PDF/Excel exports', 'REST API design']
+    highlights: [
+      'RabbitMQ event-driven architecture',
+      'Multi-step EMI & financing workflows',
+      'Optimized MySQL queries with Prisma',
+      'Role-based access control (RBAC)'
+    ]
   },
   {
     id: 3,
-    title: 'Internal GPT Assistant',
-    subtitle: 'AI-Powered Internal Knowledge Tool',
+    title: 'Internal GPT Platform',
+    subtitle: 'AI-Powered Enterprise Knowledge Tool',
+    category: 'AI & Machine Learning',
     description:
-      'A custom GPT-powered assistant built for internal teams to query company knowledge, automate repetitive research tasks, and surface contextual insights — dramatically reducing manual lookup time.',
+      'A custom Generative AI platform giving employees conversational access to organization-specific knowledge and automating repetitive internal workflows.',
     longDescription:
-      'Identified a bottleneck where internal teams spent hours searching documentation and historical data. Built a Node.js backend integrating OpenAI APIs with a company knowledge base. The assistant understands natural language queries, retrieves relevant internal data, and returns structured responses, cutting research time by over 60%.',
-    technologies: ['Node.js', 'OpenAI API', 'REST APIs', 'JavaScript'],
-    color: 'from-orange-500 to-rose-600',
+      'Integrated Generative AI into internal business applications at Nibav Lifts. Built secure backend APIs in Node.js connecting AI models with internal company documentation and operational datasets. The platform enables staff to execute natural language queries and retrieve structured business answers in seconds, saving 60%+ research time.',
+    technologies: ['Node.js', 'Generative AI', 'RESTful APIs', 'Vector Search', 'TypeScript'],
+    color: 'from-purple-500 to-pink-600',
     icon: '🤖',
     highlights: [
-      'Natural language queries',
-      'Knowledge base integration',
-      '60% faster research',
-      'Team productivity boost'
+      'Conversational company knowledge access',
+      'Automated internal workflows',
+      'Secure scoped API endpoints',
+      '60%+ reduction in research time'
+    ]
+  },
+  {
+    id: 4,
+    title: 'Customer Document Management System',
+    subtitle: 'Secure Cloud Storage & Ingestion',
+    category: 'Cloud & Infrastructure',
+    description:
+      'Centralized cloud storage and verification system built with AWS S3 and DigitalOcean Spaces for managing high-volume customer documents and media.',
+    longDescription:
+      'Engineered a centralized system to securely store, validate, and retrieve high-volume customer identification and financing documents. Integrates AWS S3 and DigitalOcean Spaces for scalable media delivery, coupled with NestJS microservices and MySQL for sub-second document verification and download pipelines.',
+    technologies: ['NestJS', 'AWS S3', 'DigitalOcean Spaces', 'Prisma ORM', 'MySQL'],
+    color: 'from-blue-500 to-cyan-600',
+    icon: '☁️',
+    highlights: [
+      'AWS S3 & DigitalOcean Spaces integration',
+      'High-throughput media upload pipelines',
+      'Encrypted document access & RBAC',
+      'Zero-downtime microservice architecture'
     ]
   }
 ];
@@ -113,33 +144,69 @@ export const PROJECTS = [
 export const EXPERIENCES = [
   {
     company: 'Nibav Lifts',
+    location: 'Chennai, India',
     role: 'Full Stack Developer',
-    period: '2022 – Present',
+    period: 'Feb 2024 – Nov 2026',
+    badge: 'Home elevator manufacturer',
+    type: 'Full-Time',
     description:
-      'Led frontend and backend development for customer-facing platforms, 3D configurator tools, and enterprise management systems.',
+      'Architecting and delivering end-to-end web applications, interactive 3D configurators, asynchronous event-driven microservices, and Generative AI platforms powering customer portals and global operations.',
     points: [
-      'Developed and maintained frontend and backend of customer-facing websites for Nibav Lifts and Elite Elevators',
-      'Designed MySQL databases, built REST APIs with Node.js for robust CRUD operations',
-      'Built an interactive 3D Elevator Configurator using Three.js and React Three Fiber',
-      'Developed an internal GPT assistant that reduced team research time by 60%',
-      'Led a full enterprise management platform (NestJS, Prisma, RabbitMQ, MySQL)',
-      'Optimized SEO and site performance for better search visibility',
-      'Collaborated with design and product teams to deliver responsive UI/UX'
+      'Architected end-to-end full stack web applications using React.js, Next.js, TypeScript, Node.js, NestJS, Prisma ORM, and MySQL powering customer portals and internal operations.',
+      'Engineered interactive 3D product visualization experiences using Three.js & React Three Fiber, enabling real-time 3D model rendering and dynamic customization.',
+      'Implemented RabbitMQ event-driven architecture for asynchronous background processing and reliable inter-service messaging under heavy load.',
+      'Contributed to an internal GPT platform integrating Generative AI, enabling conversational search across organizational knowledge and automating internal workflows.',
+      'Engineered scalable RESTful APIs connecting frontend interfaces to backend microservices, reducing integration latency and improving reliability.',
+      'Integrated AWS S3 and DigitalOcean Spaces for secure, high-availability media management and streamlined storage workflows.',
+      'Owned application deployment and release management using CI/CD practices, sustaining zero-downtime releases and rapid incident resolution in production.'
     ],
-    tech: ['React.js', 'Next.js', 'Node.js', 'NestJS', 'Three.js', 'MySQL', 'RabbitMQ']
+    tech: [
+      'React.js',
+      'Next.js',
+      'Node.js',
+      'NestJS',
+      'Three.js',
+      'TypeScript',
+      'Prisma ORM',
+      'MySQL',
+      'RabbitMQ',
+      'AWS S3',
+      'Gen AI',
+      'CI/CD'
+    ]
   },
   {
     company: 'Tekonika Technologies',
+    location: 'Bengaluru, India',
     role: 'Software Engineer',
-    period: '2021 – 2022',
+    period: 'Jan 2023 – Aug 2023',
+    badge: 'Software Engineering',
+    type: 'Full-Time',
     description:
-      'Built REST APIs, MySQL database schemas, and contributed to full project lifecycles across 3+ client projects.',
+      'Engineered robust backend RESTful APIs, optimized MySQL database architectures, and spearheaded full-lifecycle web application delivery across client projects.',
     points: [
-      'Designed and developed MySQL databases and schema architectures',
-      'Built custom REST APIs using Node.js for efficient CRUD operations',
-      'Collaborated with technical leads ensuring 100% on-time sprint delivery',
-      'Contributed to the full development lifecycle of 3+ projects from inception to deployment'
+      'Established efficient MySQL database structures to improve data accessibility, maintain schema consistency, and support growing data throughput.',
+      'Streamlined frontend-backend integration by implementing high-performance RESTful APIs with Node.js and Express.js for reliable data processing workflows.',
+      'Contributed to the full SDLC of 3+ client projects from inception to production deployment, achieving 100% on-time sprint delivery.',
+      'Partnered with technical leads to establish clean coding standards and conduct code reviews using Git and GitHub, upholding software quality across deliverables.'
     ],
-    tech: ['Node.js', 'MySQL', 'REST APIs', 'JavaScript']
+    tech: ['Node.js', 'Express.js', 'MySQL', 'RESTful APIs', 'JavaScript', 'Git', 'Agile/Scrum']
+  },
+  {
+    company: "BYJU'S",
+    location: 'Bengaluru, India',
+    role: 'Associate Software Engineer',
+    period: 'Jun 2021 – Nov 2022',
+    badge: 'Edtech',
+    type: 'Full-Time',
+    description:
+      'Developed and maintained high-traffic internal sales web applications with React.js, built cross-platform mobile tools with React Native, and established scalable backend data pipelines.',
+    points: [
+      'Advanced and maintained 7+ internal web applications for sales and operations teams using React.js, React Hooks, JavaScript, HTML5, and CSS3, elevating workflow efficiency.',
+      'Built a cross-platform mobile application for sales representatives using React Native, providing on-the-go access to key sales tools and customer tracking.',
+      'Engineered server-side applications using Node.js, MongoDB, and Mongoose, establishing reliable data pipelines and APIs for multiple internal systems.',
+      'Resolved complex bugs, performed peer code reviews, and created comprehensive technical documentation, accelerating developer onboarding.'
+    ],
+    tech: ['React.js', 'React Native', 'Node.js', 'MongoDB', 'Mongoose', 'JavaScript', 'HTML5/CSS3']
   }
 ];
